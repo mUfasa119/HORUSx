@@ -22,11 +22,14 @@
   <a href="https://mufasa119.github.io/cv">
     <img src="https://img.shields.io/badge/Portfolio-mufasa119.github.io-FF6B6B?style=flat-square&logo=googlechrome&logoColor=white" alt="Portfolio">
   </a>
+  <a href="https://github.com/mufasa119">
+    <img src="https://img.shields.io/badge/GitHub-mufasa119-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub">
+  </a>
 </p>
 
 ---
 
-**Built by [Belguermi Mustapha](https://linkedin.com/in/belguermi-mustapha-664a82426)** — [Portfolio](https://mufasa119.github.io/cv)  
+**Built by [Belguermi Mustapha](https://linkedin.com/in/belguermi-mustapha-664a82426) ([@mufasa119](https://github.com/mufasa119))** — [Portfolio](https://mufasa119.github.io/cv)  
 **Powered by [scrcpy](https://github.com/Genymobile/scrcpy) + [ADB](https://developer.android.com/tools/adb)**
 
 ---
@@ -275,10 +278,12 @@ HORUSx runs **entirely on your PC**. It does **not** send any data anywhere.
 
 ## 🙌 Credits & Author
 
-**Belguermi Mustapha** — *Technicien Supérieur en Réseaux & Cybersécurité*
+**Belguermi Mustapha** — *aka* **[@mufasa119](https://github.com/mufasa119)**  
+*Technicien Supérieur en Réseaux & Cybersécurité*
 
 - 💼 **LinkedIn:** [belguermi-mustapha](https://linkedin.com/in/belguermi-mustapha-664a82426)
 - 🌐 **Portfolio / CV:** [mufasa119.github.io/cv](https://mufasa119.github.io/cv)
+- 🐙 **GitHub:** [@mufasa119](https://github.com/mufasa119)
 
 **Powered by:**
 - [scrcpy](https://github.com/Genymobile/scrcpy) — by Genymobile
