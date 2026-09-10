@@ -15,9 +15,18 @@
   <img src="https://img.shields.io/badge/version-1.0.0-blueviolet?style=flat-square" alt="Version">
 </p>
 
+<p align="center">
+  <a href="https://linkedin.com/in/belguermi-mustapha-664a82426">
+    <img src="https://img.shields.io/badge/LinkedIn-Belguermi%20Mustapha-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <a href="https://mufasa119.github.io/cv">
+    <img src="https://img.shields.io/badge/Portfolio-mufasa119.github.io-FF6B6B?style=flat-square&logo=googlechrome&logoColor=white" alt="Portfolio">
+  </a>
+</p>
+
 ---
 
-**Built by [mufasa119](https://github.com/mufasa119)**  
+**Built by [Belguermi Mustapha](https://linkedin.com/in/belguermi-mustapha-664a82426)** — [Portfolio](https://mufasa119.github.io/cv)  
 **Powered by [scrcpy](https://github.com/Genymobile/scrcpy) + [ADB](https://developer.android.com/tools/adb)**
 
 ---
@@ -264,11 +273,16 @@ HORUSx runs **entirely on your PC**. It does **not** send any data anywhere.
 
 ---
 
-## 🙌 Credits
+## 🙌 Credits & Author
 
-- Built by **[mufasa119](https://github.com/mufasa119)**
-- Powered by **[scrcpy](https://github.com/Genymobile/scrcpy)** by Genymobile
-- Uses **[ADB](https://developer.android.com/tools/adb)** from Android Platform Tools
+**Belguermi Mustapha** — *Technicien Supérieur en Réseaux & Cybersécurité*
+
+- 💼 **LinkedIn:** [belguermi-mustapha](https://linkedin.com/in/belguermi-mustapha-664a82426)
+- 🌐 **Portfolio / CV:** [mufasa119.github.io/cv](https://mufasa119.github.io/cv)
+
+**Powered by:**
+- [scrcpy](https://github.com/Genymobile/scrcpy) — by Genymobile
+- [ADB](https://developer.android.com/tools/adb) — Android Platform Tools
 
 ---
 
