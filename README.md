@@ -35,47 +35,112 @@
 
 ---
 
-## 📥 Install — Two Options
+## 📥 Install — For First-Time Users
 
-### 🅰️ Option A — Download the ready-made `.exe` (recommended)
+### Step 1 — Download HorusX.exe
 
-**No setup required.**
+Go to the [**Releases**](../../releases) page and download the latest **`HorusX.exe`**.
 
-1. Go to the [**Releases**](../../releases) page
-2. Download the latest **`HorusX.exe`**
-3. Save it anywhere on your PC (e.g. `C:\HorusX\HorusX.exe`)
-4. **Double-click it** to run
-
-On the first launch, HORUSx will:
-- Check for ADB and scrcpy
-- Offer to install them via Winget if missing
-- Ask you to restart PowerShell once (Windows requirement)
-- Then continue normally
+Save it anywhere — for example: `C:\HorusX\HorusX.exe`
 
 > ⚠️ **Windows SmartScreen warning?**  
-> Click **"More info" → "Run anyway"**. This appears because the `.exe` isn't code-signed — it's safe.
+> You may see *"Windows protected your PC."*  
+> Click **"More info" → "Run anyway"**.  
+> This appears because the `.exe` isn't code-signed — it's safe.
 
 ---
 
-### 🅱️ Option B — Run from source (advanced)
+### Step 2 — Run it for the first time
 
-If you prefer to run the PowerShell script directly:
+**Double-click `HorusX.exe`.**
 
-1. **Install the prerequisites manually:**
+The script will start and check if ADB and scrcpy are installed.
 
-   ```powershell
-   choco install adb scrcpy -y
-   ```
-   *(Or install [ADB](https://developer.android.com/tools/releases/platform-tools) and [scrcpy](https://github.com/Genymobile/scrcpy) manually and add them to your PATH)*
+**If they're missing**, you'll see:
 
-2. **Download** `horusX.ps1` from this repo
+```
+[!] Missing tools detected:
+    - adb
+    - scrcpy
 
-3. **Allow script execution and run:**
+Install them automatically now? [Y/n]:
+```
 
-   ```powershell
-   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-   .\horusX.ps1
-   ```
+→ **Press `Y` and Enter.** The script installs both tools automatically using Windows' built-in Winget.
+
+Wait 1–2 minutes while it downloads and installs.
+
+---
+
+### Step 3 — Restart PowerShell (Windows requirement)
+
+When the install finishes, the script tells you:
+
+```
+[!] IMPORTANT: Restart PowerShell for the new tools to be on PATH.
+    After restart, run horusX.ps1 again.
+
+Press Enter to exit
+```
+
+→ **Press Enter to close.** This is normal — Windows can't update PATH for programs that are already running.
+
+---
+
+### Step 4 — Run HorusX.exe again
+
+**Double-click `HorusX.exe` again.**
+
+This time the prerequisites check passes:
+
+```
+[*] Checking prerequisites...
+[+] Prerequisites OK.
+```
+
+You're now ready to connect your phone. Continue to **Quick Start** below.
+
+---
+
+### Step 5 — Connect your phone (one-time setup)
+
+On your Android phone:
+
+1. **Settings → About phone** → tap **Build number** 7 times
+2. **Settings → Developer options** → enable **Wireless debugging**
+3. Tap **Wireless debugging** → **Pair device with pairing code**
+4. Note the **IP:port** and **6-digit code** — **keep this screen open**
+
+In HorusX.exe:
+
+- Enter the **IP:pairing-port** → press Enter
+- Enter the **6-digit code** → press Enter
+- Enter the **connection port** (from the main Wireless Debugging screen — a *different* number) → press Enter
+
+**scrcpy opens — your phone appears on your PC screen.** 🎉
+
+---
+
+### 🔁 From now on
+
+Once you've paired successfully, the next time you run HorusX.exe:
+
+- It shows your saved connection info
+- Asks **"Use saved connection info? [Y/n]"**
+- Press **Enter** → reconnects automatically → scrcpy launches
+
+Just make sure **Wireless Debugging is still ON** on your phone.
+
+---
+
+## ❗ Do NOT run as Administrator
+
+**Run HORUSx as a normal user.**
+
+- HORUSx only needs admin rights if it's installing ADB or scrcpy for the first time
+- Windows will prompt for that automatically via a UAC popup — click **Yes** on that popup only
+- You don't need to launch the tool as administrator
+- Running elevated can create files with the wrong ownership and is unnecessary
 
 ---
 
@@ -85,31 +150,7 @@ If you prefer to run the PowerShell script directly:
 - **Android 11+** on the phone (for Wireless Debugging)
 - **Internet connection** (for the one-time auto-install of ADB + scrcpy)
 
-**No manual setup needed** — HORUSx installs ADB and scrcpy automatically on the first run.
-
----
-
-## 🚀 Quick Start
-
-### 1. Enable Wireless Debugging on your phone
-
-1. Settings → **About phone** → tap **Build number** 7 times
-2. Settings → **Developer options** → enable **Wireless debugging**
-3. *(Samsung)* Settings → **Security and privacy** → disable **Auto Blocker**
-
-### 2. Get the pairing info
-
-1. Tap **Wireless debugging** → **Pair device with pairing code**
-2. Note the **IP:pairing-port** and **6-digit code**
-3. **Keep the dialog open** — codes expire in ~2 minutes
-
-### 3. Run HORUSx
-
-1. **Double-click `HorusX.exe`**
-2. On the first run, approve the auto-install of ADB and scrcpy
-3. **Restart PowerShell** once (Windows needs this for PATH updates)
-4. Double-click `HorusX.exe` again → enter your phone's pairing info
-5. **scrcpy opens** — you're now controlling your phone 🎉
+No manual setup needed — HORUSx installs ADB and scrcpy automatically on the first run.
 
 ---
 
@@ -128,7 +169,7 @@ If you prefer to run the PowerShell script directly:
 
 ---
 
-## 🛠️ Building from Source
+## 🛠️ Build from Source
 
 If you want to modify the script or build your own version:
 
@@ -153,9 +194,26 @@ Invoke-PS2EXE .\horusX.ps1 .\HorusX.exe -iconFile .\horusX.ico
 | `scrcpy not recognized` | Run `winget install Genymobile.scrcpy` and restart PowerShell |
 | Pairing fails | Reopen the pairing dialog — codes expire quickly |
 | Connection times out | Phone and PC must be on the same Wi-Fi |
+| "exit code -1978335189" from Winget | Not an error — means "already installed, nothing to upgrade" |
 | Old icon shows after update | Run `ie4uinit.exe -show` to refresh Windows icon cache |
 | EXE blocked by SmartScreen | Click **More info → Run anyway** |
 | Winget not available | Update Windows — Winget ships with Windows 10 1809+ |
+
+---
+
+## ❓ First-Time Questions
+
+**"Do I need to install anything manually?"**  
+No — HorusX installs ADB and scrcpy for you on first run.
+
+**"Why does it need to be restarted?"**  
+Windows only updates its PATH for *new* terminal sessions. The script needs a fresh shell to see the newly installed tools.
+
+**"Do I need to run it as administrator?"**  
+No. Run it as a normal user. Windows will pop a UAC prompt during the tool install — click Yes on that prompt only.
+
+**"Is this safe?"**  
+Yes. HorusX runs entirely on your PC. Nothing is uploaded, no accounts, no telemetry.
 
 ---
 
@@ -180,7 +238,7 @@ HORUSx runs **entirely on your PC**. It does **not** send any data anywhere.
 |---|---|
 | ![Banner](screenshots/banner.png) | ![scrcpy](screenshots/session.png) |
 
-> Add `screenshots/session.png` — a real screenshot of scrcpy running with your phone screen mirrored.
+> To add a live session screenshot: run HorusX, mirror your phone, and save the scrcpy window as `screenshots/session.png`.
 
 ---
 
@@ -207,6 +265,6 @@ HORUSx runs **entirely on your PC**. It does **not** send any data anywhere.
 
 ---
 
-⭐ **If HORUSx is useful to you, please star the repo!**  
+⭐ **If HorusX is useful to you, please star the repo!**  
 🐛 **Found a bug? Open an issue.**  
 💡 **Have an idea? Start a discussion.**
