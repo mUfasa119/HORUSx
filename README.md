@@ -1,12 +1,21 @@
-# HORUSx
+<p align="center">
+  <img src="screenshots/banner.png" alt="HORUSx" width="700"/>
+</p>
 
-> Control any Android phone from your Windows PC — over Wi-Fi, no cables, no root.
+<h1 align="center">HORUSx</h1>
 
-![HORUSx Banner](screenshots/banner.png)
+<p align="center">
+  <em>Control any Android phone from your Windows PC — over Wi-Fi, no cables, no root.</em>
+</p>
 
-HORUSx is a single Windows executable that turns your PC into a remote control
-for any Android device. Enter your phone's IP and pairing code, and your screen
-appears on your PC in real time — ready for mouse and keyboard input.
+<p align="center">
+  <img src="https://img.shields.io/badge/platform-Windows-blue?style=flat-square" alt="Windows">
+  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License">
+  <img src="https://img.shields.io/badge/powered%20by-scrcpy-orange?style=flat-square" alt="scrcpy">
+  <img src="https://img.shields.io/badge/version-1.0.0-blueviolet?style=flat-square" alt="Version">
+</p>
+
+---
 
 **Built by [mufasa119](https://github.com/mufasa119)**  
 **Powered by [scrcpy](https://github.com/Genymobile/scrcpy) + [ADB](https://developer.android.com/tools/adb)**
@@ -26,13 +35,47 @@ appears on your PC in real time — ready for mouse and keyboard input.
 
 ---
 
-## 🎯 Use Cases
+## 📥 Install — Two Options
 
-- 📱 Test Android apps on a real device without cables
-- 🖥️ Use your phone from your PC keyboard and mouse
-- 🎥 Record Android screen demos and tutorials
-- 🔧 Debug mobile apps with real touch input
-- 👨‍👩‍👧 Monitor your own spare/test phones on your home network
+### 🅰️ Option A — Download the ready-made `.exe` (recommended)
+
+**No setup required.**
+
+1. Go to the [**Releases**](../../releases) page
+2. Download the latest **`HorusX.exe`**
+3. Save it anywhere on your PC (e.g. `C:\HorusX\HorusX.exe`)
+4. **Double-click it** to run
+
+On the first launch, HORUSx will:
+- Check for ADB and scrcpy
+- Offer to install them via Winget if missing
+- Ask you to restart PowerShell once (Windows requirement)
+- Then continue normally
+
+> ⚠️ **Windows SmartScreen warning?**  
+> Click **"More info" → "Run anyway"**. This appears because the `.exe` isn't code-signed — it's safe.
+
+---
+
+### 🅱️ Option B — Run from source (advanced)
+
+If you prefer to run the PowerShell script directly:
+
+1. **Install the prerequisites manually:**
+
+   ```powershell
+   choco install adb scrcpy -y
+   ```
+   *(Or install [ADB](https://developer.android.com/tools/releases/platform-tools) and [scrcpy](https://github.com/Genymobile/scrcpy) manually and add them to your PATH)*
+
+2. **Download** `horusX.ps1` from this repo
+
+3. **Allow script execution and run:**
+
+   ```powershell
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+   .\horusX.ps1
+   ```
 
 ---
 
@@ -42,8 +85,7 @@ appears on your PC in real time — ready for mouse and keyboard input.
 - **Android 11+** on the phone (for Wireless Debugging)
 - **Internet connection** (for the one-time auto-install of ADB + scrcpy)
 
-**No manual setup needed** — HORUSx installs ADB and scrcpy automatically
-on the first run.
+**No manual setup needed** — HORUSx installs ADB and scrcpy automatically on the first run.
 
 ---
 
@@ -63,12 +105,11 @@ on the first run.
 
 ### 3. Run HORUSx
 
-1. Download `HorusX.exe` from the [Releases](../../releases) page
-2. **Double-click it**
-3. On the first run, approve the auto-install of ADB and scrcpy
-4. **Restart PowerShell** once (Windows needs this for PATH updates)
-5. Double-click `HorusX.exe` again → enter your phone's pairing info
-6. **scrcpy opens** — you're now controlling your phone 🎉
+1. **Double-click `HorusX.exe`**
+2. On the first run, approve the auto-install of ADB and scrcpy
+3. **Restart PowerShell** once (Windows needs this for PATH updates)
+4. Double-click `HorusX.exe` again → enter your phone's pairing info
+5. **scrcpy opens** — you're now controlling your phone 🎉
 
 ---
 
@@ -135,9 +176,11 @@ HORUSx runs **entirely on your PC**. It does **not** send any data anywhere.
 
 ## 📸 Screenshots
 
-| Banner | Connected Session |
+| Banner | Live Session |
 |---|---|
-| ![Banner](screenshots/banner.png) | ![Scrcpy](screenshots/session.png) |
+| ![Banner](screenshots/banner.png) | ![scrcpy](screenshots/session.png) |
+
+> Add `screenshots/session.png` — a real screenshot of scrcpy running with your phone screen mirrored.
 
 ---
 
