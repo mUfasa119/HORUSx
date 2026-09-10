@@ -29,6 +29,7 @@
 - ⚡ **Low latency** — 30 FPS at ~50–100 ms, powered by scrcpy
 - 🖱️ **Full remote control** — clicks become taps, your keyboard types on the phone
 - 💾 **Remembers your setup** — optional local config saves your connection for one-key reconnects
+- 🧹 **Auto-disconnects** — closing scrcpy cleanly drops the ADB connection
 - 🎨 **Stylish CLI** — colored banner because tools should look good too
 - 🔒 **No data collection** — nothing is ever sent anywhere. Everything runs on your PC
 - 📦 **Single `.exe`** — no Python, no Node, no manual setup for the user
@@ -154,6 +155,22 @@ No manual setup needed — HORUSx installs ADB and scrcpy automatically on the f
 
 ---
 
+## 📸 Screenshots
+
+### 🖥️ The Script
+
+<p align="center">
+  <img src="screenshots/script.png" alt="HORUSx script" width="800"/>
+</p>
+
+### 📱 Live Session — Phone Mirrored to PC
+
+<p align="center">
+  <img src="screenshots/session.png" alt="HORUSx live session" width="800"/>
+</p>
+
+---
+
 ## 🎮 Controls (in scrcpy)
 
 | Action | Shortcut |
@@ -229,16 +246,6 @@ HORUSx runs **entirely on your PC**. It does **not** send any data anywhere.
 - Only use on **your own devices**, on **trusted networks**
 - Turn off Wireless Debugging on the phone when not using HORUSx
 - **Never install this on someone else's phone without their explicit knowledge and consent**
-
----
-
-## 📸 Screenshots
-
-| Banner | Live Session |
-|---|---|
-| ![Banner](screenshots/banner.png) | ![scrcpy](screenshots/session.png) |
-
-> To add a live session screenshot: run HorusX, mirror your phone, and save the scrcpy window as `screenshots/session.png`.
 
 ---
 
